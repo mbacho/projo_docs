@@ -26,12 +26,14 @@ file : main.py
 project : projo_docs
 
 """
-from jinja.exceptions import TemplateNotFound
 
 __author__ = 'mbacho'
+
+from os.path import join
+
+from jinja.exceptions import TemplateNotFound
 from jinja.environment import Environment
 from jinja import FileSystemLoader
-from os.path import join
 
 
 def main():
@@ -45,7 +47,7 @@ def main():
             f = open(join(html_dir, i), 'wb')
             f.write(rendered)
             f.close()
-            print i,"rendered"
+            print i, "rendered"
         except TemplateNotFound, te:
             print i, "not found"
 
