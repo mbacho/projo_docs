@@ -3,6 +3,11 @@ body {
   color: #5a5a5a;
 }
 
+.jumbotron {
+    padding-top: 100px;
+    height: 450px;
+}
+
 /* MARKETING CONTENT
 -------------------------------------------------- */
 
