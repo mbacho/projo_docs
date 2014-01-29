@@ -26,9 +26,9 @@ file : main.py
 project : projo_docs
 
 """
-
 __author__ = 'mbacho'
 
+from os import system
 from os.path import join
 
 from jinja.exceptions import TemplateNotFound
@@ -38,7 +38,7 @@ from jinja import FileSystemLoader
 
 def main():
     filenames = ['milestone1.html', 'milestone2.html', 'milestone3.html']
-    html_dir = 'html/milestones'
+    html_dir = 'html'
     env = Environment(loader=FileSystemLoader('templates'))
     for i in filenames:
         try:
@@ -50,6 +50,8 @@ def main():
             print i, "rendered"
         except TemplateNotFound, te:
             print i, "not found"
+
+    system('ghp-import -p html')
 
 
 if __name__ == '__main__':
