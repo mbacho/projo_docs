@@ -1,4 +1,5 @@
 .idea/
 _site/
+gh-pages
 *.pyc
 *.pyo
