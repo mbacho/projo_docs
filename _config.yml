@@ -1,3 +1,2 @@
-source: html
-destination: gh-pages
-
+source: gh-pages
+port: 8909

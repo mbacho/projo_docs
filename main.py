@@ -26,20 +26,34 @@ file : main.py
 project : projo_docs
 
 """
+
 __author__ = 'mbacho'
 
-from os import system
-from os.path import join
-
+from os import (system, mkdir)
+from os.path import (join, exists, isdir)
+import sys
+from shutil import rmtree
 from jinja.exceptions import TemplateNotFound
 from jinja.environment import Environment
 from jinja import FileSystemLoader
 
 
+def clean_output(output_dir):
+    if exists(output_dir) and isdir(output_dir):
+        rmtree(output_dir)
+    elif exists(output_dir):
+        return False
+    mkdir(output_dir)
+    return True
+
+
 def main():
     filenames = ['milestone1.html', 'milestone2.html', 'milestone3.html']
-    html_dir = 'html'
-    env = Environment(loader=FileSystemLoader('templates'))
+    html_dir = 'gh-pages'
+    if not clean_output(html_dir):
+        sys.stderr.write('folder cleanup failed\n')
+        sys.exit(1)
+    env = Environment(loader=FileSystemLoader('src/templates'))
     for i in filenames:
         try:
             template = env.get_template(i)
@@ -51,7 +65,9 @@ def main():
         except TemplateNotFound, te:
             print i, "not found"
 
-    system('ghp-import -p html')
+    system('cp src/index.html %s/' % html_dir)
+    system('cp -R src/static %s/' % html_dir)
+    system('ghp-import -p %s' % html_dir)
 
 
 if __name__ == '__main__':
