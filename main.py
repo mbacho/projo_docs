@@ -36,7 +36,7 @@ from shutil import rmtree
 from jinja.exceptions import TemplateNotFound
 from jinja.environment import Environment
 from jinja import FileSystemLoader
-
+from sys import argv
 
 def clean_output(output_dir):
     if exists(output_dir) and isdir(output_dir):
@@ -47,7 +47,7 @@ def clean_output(output_dir):
     return True
 
 
-def main():
+def main(push_origin=False):
     filenames = ['milestone1.html', 'milestone2.html', 'milestone3.html']
     html_dir = 'gh-pages'
     if not clean_output(html_dir):
@@ -67,9 +67,10 @@ def main():
 
     system('cp src/index.html %s/' % html_dir)
     system('cp -R src/static %s/' % html_dir)
-    system('ghp-import -p %s' % html_dir)
+    if push_origin:
+        system('ghp-import -p %s' % html_dir)
 
 
 if __name__ == '__main__':
-    main()
+    main(len(argv)==2)
 
