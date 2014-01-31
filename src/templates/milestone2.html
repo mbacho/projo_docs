@@ -6,49 +6,166 @@
         <section><h2>Overview</h2></section>
         <section>
             <h2>Problem statement</h2>
+            There is no effective method to analyze and determine the effectiveness and impact academic website's system
+            of websites
         </section>
     </section>
     <section>
-        <h2>Objectives</h2>
+        <section><h2>Literature review</h2></section>
+        <section>
+            <h2>Website analysis methods</h2>
+            <ul>
+                <li style="margin-bottom: 10px;">
+                    <strong>Qualitative methods</strong><br/>
+                    Content analysis, focus groups, interviews, referrer analysis, user feedback and audience analysis
+                <li>
+                    <strong>Quantitative methods</strong><br/>
+                    Website log analysis, bibliometrics, scientometrics and webometrics
+                </li>
+            </ul>
+
+        </section>
+        <section>
+            <h2>Webometric Ranking of Universities</h2>
+            <ul>
+                <li>Done biannually (Jan, July) by CSIC</li>
+                <li>Ranks over 20,000 universities</li>
+                <li>Metrics shown : web presence, web impact, openness and excellence</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Ranking analytics analytics used</h2>
+            <img src="static/img/analysis_model.jpg" style="zoom: 1.5"/><br/>
+            Visibility 50% (link visibility 20% and G-factor 30%), Size (20%)
+            Rich Files (15%), and Scholar (5%) and Scimago (10%)
+        </section>
     </section>
     <section>
-        <h2>Lit review</h2>
-    </section>
-    <section>
-        <h2>Interesting findings</h2>
-    </section>
-    <section>
-        <section data-background="#007777"><h2>System development progress</h2></section>
-        <section data-background="#007777"><h2>System Design</h2></section>
-        <section data-background="#007777"><h2>Web crawler</h2></section>
-        <section data-background="#007777">
+        <section>
+            <h2>System development</h2>
+            <h4>Iterative Development</h4>
+        </section>
+        <section>
+            <h2>High level design</h2>
+        </section>
+        <section>
+            <h2>Use Case Model</h2>
+            <img src="static/img/usecase.png" alt="use case model" title="use case model"/>
+        </section>
+        <section>
+            <h2>Level 0 DFD</h2>
+            <img src="static/img/contextdiagram.png" alt="context diagram" title="context diagram"/>
+        </section>
+        <section>
+            <h2>Level 1 DFD</h2>
+            <img src="static/img/level_1_dfd.png" alt="level 1 DFD" title="level 1 DFD"/>
+        </section>
+        <section>
+            <h2>Iterations</h2>
+            <ol>
+                <li>Data collection</li>
+                <li>Data analysis</li>
+                <li>Data presentation</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Iteration 1</h2>
+            <h4>Data collection</h4>
+        </section>
+
+        <section>
+            <h2>Data collection techniques</h2>
+
+            <h3>1. Seach engines</h3>
+
+            <h3>2. Web crawlers</h3>
+        </section>
+        <section>
+            <h2>Search engines</h2>
+            <ul>
+                <li><strong>The good</strong><br/>
+                    Free (cheap), coverage (shallow web)
+                </li>
+                <li><strong>The bad</strong><br/>
+                    Inconsistent data, different algorithms
+                </li>
+                <li><strong>The ugly</strong><br/>
+                    Minimal coverage (deep web)
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h2>Web crawler</h2>
+            <img src="static/img/webtree.png"/>
+        </section>
+        <section>
+            <h2>Web crawler cont...</h2>
+            <ul>
+                <li>The good</li>
+                Control, control control<br/>
+                Search whole domain,
+                <li>The bad</li>
+                Resource intensive (manpower, time, money, computing), more time to implement,
+                <li>Pitfalls</li>
+                Poor coding, Spider traps, Resource usage
+            </ul>
+        </section>
+        <section>
+            <ul>Why use crawlers?</ul>
+            <ol>
+                <li>Control</li>
+                <li>Content vs URL crawlers</li>
+                <li>Scalability and flexibility</li>
+            </ol>
+        </section>
+        <section>
+            <h2>Crawler design</h2>
+        </section>
+        <section>
+            <h2>Crawler DFD</h2>
+            <img src="static/img/crawler_level1_dfd.png" style="zoom: 1.5" alt="crawler architecture"
+                 title="crawler architecture"/>
+        </section>
+
+        <section>
+            <h2>Crawler Datastore</h2>
+            <img src="static/img/crawler_datastore.png" alt="crawler datastore" title="crawler datastore"/>
+        </section>
+        <section>
             <h2>Crawler architecture</h2>
             <img src="static/img/scrapy.png" alt="crawler architecture" title="crawler architecture"/>
-        </section>
-        <section data-background="#007777">
-            <h2>Algorithms</h2>
+            <br/>Crawl server
         </section>
     </section>
-    <section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
-        <h2>Schedule</h2>
-        <img src="static/img/gantt.png" alt="project gantt chart" title="project gantt chart"/>
+
+    <section>
+        <h2>Challenges</h2>
+        <ul>
+            <li>
+                <strong>Authorization</strong><br/>
+                University denied permission to interview ICT staff
+            </li>
+            <li>
+                <strong>Crawler pitfals</strong><br/>
+                Poor coding of websites, Spider traps
+            </li>
+        </ul>
     </section>
     <section>
-        <section data-transition="linear" data-background="#8c4738" data-background-transition="slide">
-            <h2>Issues raised</h2>
-        </section>
-        <section>
-            <h2>Issue 1</h2>
-            Stuff about issue 1
-        </section>
-        <section>
-            <h2>Issue 2</h2>
-            Stuff about issue 2
-        </section>
+        <h2>Issues raised</h2>
+        <ol>
+            <li><strong>Title of the project</strong><br/>
+                'Analysis of UoN website' vs 'Analysis of Kenyan Academic Webspace'
+            </li>
+            <li><strong>Scope of web crawls</strong><br/>
+                Restricting crawls to specific domains
+            </li>
+        </ol>
     </section>
     <section>
         <h2>Thank you</h2>
 
-        <h3>Demo</h3>
+        <h3>Prototype demo</h3>
     </section>
 {% endblock %}
