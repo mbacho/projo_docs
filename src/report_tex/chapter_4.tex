@@ -24,17 +24,38 @@ Iteration 2
 This iteration involved the development of the data analysis module.
 Iteration 3
 This iteration involved the development of the data presentation module
-usecases
+\subsection{Usecases}
 \begin{figure}
 	\includegraphics[width=\linewidth]{usecase.png}
 	\caption{System use case model}
 \end{figure}
 
-\begin{tabular}{ l | c || r }
-  1 & 2 & 3 \\
-  4 & 5 & 6 \\
-  7 & 8 & 9 \\
+\begin{table}
+\centering
+\begin{tabular}{|l|l|}
+\hline
+    \thead{Name} & Create project\\
+\hline
+    \thead{Id} & 1\\
+\hline
+    \thead{Version} & 1\\
+\hline
+    \thead{Summary} & Create new webometric analysis project\\
+\hline
+    \multirow{2}{*}{\thead{Actors}} & User\\
+            & System\\
+\hline
+    \multirow{3}{*}{\thead{Entry conditions}} & User is registered\\
+            & User is logged in\\
+            & University domains are presented to user\\
+\hline
+    \thead{Exit conditions} & System starts data collection\\
+\hline
+    \thead{Triggers} & \\
+\hline
 \end{tabular}
+\caption{Use case 1}
+\end{table}
 
 \section{System design}
 

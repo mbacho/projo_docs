@@ -24,6 +24,7 @@
 \usepackage[utf8x]{inputenc}
 \usepackage{soul}
 \usepackage[bordercolor=white,backgroundcolor=gray!30,linecolor=black,colorinlistoftodos]{todonotes}
+\usepackage{multirow}
 \graphicspath{{../static/img/}}
 %---------------------------------------------------------------
 
@@ -188,8 +189,8 @@
 {  }
 
 
-\newcommand{\thead}
+\newcommand{\thead}[1]
 {
-    
+    \textbf{#1}
 }
 
