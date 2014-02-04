@@ -67,6 +67,8 @@ def main(push_origin=False):
 
     system('cp src/index.html %s/' % html_dir)
     system('cp -R src/static %s/' % html_dir)
+    if exists('src/report_tex/report.pdf'):
+        system('cp src/report_tex/report.pdf %s/static/'%html_dir)
     if push_origin:
         system('ghp-import -p %s' % html_dir)
 
