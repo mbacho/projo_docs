@@ -2,4 +2,58 @@
 \section{Research methodology}
 
 \section{System methodology}
+\begin{review_comment}{Why evolutionary, advantages,disadvantages}{orange}
+{Evolutionary prototype methodology was chosen to implement this project.
+}\end{review_comment}
+The main goal in this methodology is to create a robust prototype in a structured way and constantly refine it according to the requirements which would evolve into the final system. The methodology was chosen because of its high tolerance to changing requirements. Only the
+requirements that are well understood are handled first.
+The methodology has four main stages:
+\begin{enumerate}
+\item Definition of basic requirements
+\item Developing working prototype
+\item Verifying prototype
+\item Changing requirements
+\end{enumerate}
+
+This methodology was especially helpful in overcoming a hiccup encountered by the developer when one of the requirements gathering tools was delayed which consequently delayed the collection of
+requirements.
+Some advantages of the methodology include:
+\begin{itemize}
+\item User involvement from the start
+\item Suitable for projects with vague and changing requirements
+\item User may start using system early in development stage
+\end{itemize}
+
+\begin{review_comment}{disadvantages}{orange}
+{The main disadvantages of the methodology are}
+\end{review_comment}
+
+\subsection{Process Overview}
+\begin{review_comment}{system development process overview}{red}{}
+\end{review_comment}
+
+\subsection{Iterations}
+During each iteration, the prototype will be checked against the set requirements. Changes will be made accordingly to fit the requirements.
+Functionality will be added incrementally to the prototype. Testing shall be done to the additional functionality before integrating with the prototype. After passing the tests, the new functionality will
+be integrated to the system.
+Testing shall be done on the prototype after integration with the new functionality in each iteration to ensure stability of the proposed system through the iterations.
+
+\begin{review_comment}{system development iteration overview}{red}{}
+\end{review_comment}
+The major iterations in development of the system were :
+\begin{enumerate}
+\item Developing web crawler module\\
+This is the first iteration of the system development process. The web crawler was developed so as
+to collect data from the web servers and search engines to be used in the analysis. The crawler was
+developed in two major stages:
+\begin{enumerate}
+\item Standalone web crawler.
+The crawler was designed and implemented as a single standalone crawler. it handled crawling of
+the given websites synchronously (one at a time) and eventually asynchronously (two websites concurrently). The crawler used up a lot of computer resources mostly CPU time, when it was run from one machine.
+\item Distributed web crawler. 
+The distributed crawler was developed to accommodate the immense demand for computer resources due to crawling huge websites. It was based on the standalone version of the web crawler.
+\end{enumerate}
+\item Developing data analysing module\\
+\item Developing data presentation module\\
+\end{enumerate}
 

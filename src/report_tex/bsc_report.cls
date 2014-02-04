@@ -16,10 +16,15 @@
 
 %------------------packages-------------------------------
 %\usepackage[dvips]{graphicx,color}
+\usepackage[english]{babel}
 \usepackage{graphicx}
 \usepackage{fourier}
 \usepackage{listings}
 \usepackage[usenames,dvipsnames]{color}
+\usepackage[utf8x]{inputenc}
+\usepackage{soul}
+\usepackage[bordercolor=white,backgroundcolor=gray!30,linecolor=black,colorinlistoftodos]{todonotes}
+\graphicspath{{../static/img/}}
 %---------------------------------------------------------------
 
 \newcommand{\submittedtext}{{A project report submitted in partial fulfillment of the BSc (Computer Science)}}
@@ -45,13 +50,13 @@
 \setlength{\textheight}{9.0in}
 \setlength{\textwidth}{6.0in}
 
-\def\crest{\hbox to\textwidth{\hss $\includegraphics{imgs/uonlogo.eps}$\hss}}
+\def\crest{\hbox to\textwidth{\hss $\includegraphics[height=1.5in,width=1.5in]{uonlogo.png}$\hss}}
 
 
 % These macros define an environment for front matter that is always 
 % single column even in a double-column document.
 
-\newenvironment{alwayssingle}{%
+\newenvironment{alwayssingle}{
        \@restonecolfalse\if@twocolumn\@restonecoltrue\onecolumn
        \else\newpage\fi}{\if@restonecol\twocolumn\else\newpage\fi}
 
@@ -64,7 +69,7 @@
 	    \thispagestyle{empty}
 	  \null\vfill
 	  \begin{center}
-	    { 
+	    {  
 	     \Huge 
 	      {\bfseries {\@title}} \par
 	    }
@@ -168,4 +173,23 @@
 { \end{itemize} }
 
 %REFERENCES
-\newenvironment{references}{}{\newpage}
+\newenvironment{references}{
+    \chapter{References}
+}{\newpage}
+
+%Review comment markers
+% #1 comment heading
+% #2 comment type [green, orange, red]
+\newenvironment{review_comment}[3]
+{
+    \todo[color=#2,inline]{#1}
+    \hl {#3}
+}
+{  }
+
+
+\newcommand{\thead}
+{
+    
+}
+

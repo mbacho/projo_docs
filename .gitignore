@@ -12,3 +12,4 @@ build
 *.synctex.gz
 *.toc
 *.nlo
+*.tdo
