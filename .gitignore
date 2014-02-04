@@ -1,5 +1,14 @@
-.idea/
-_site/
+.idea
+_site
 gh-pages
 *.pyc
 *.pyo
+build
+*.log
+*.aux
+*.lot
+*.lof
+*.pdf
+*.synctex.gz
+*.toc
+*.nlo
