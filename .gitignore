@@ -15,3 +15,5 @@ build
 *.tdo
 *.swp
 *.gummi
+*.idx
+*.out
