@@ -1,1 +1,1 @@
-johnnywalker/spiders/walker.py
+/home/barbossa/PycharmProjects/webometrics_env/webometrics/johnnywalker/spiders/walker.py
