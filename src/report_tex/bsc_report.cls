@@ -195,4 +195,8 @@
     \textbf{#1}
 }
 
+\newcommand{\itemhead}[1]{
+	\textbf{#1}
+}
+
 

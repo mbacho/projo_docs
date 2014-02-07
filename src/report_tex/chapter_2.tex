@@ -37,7 +37,7 @@ Self-promotion is an important part of the wider process of research, even for i
 This promotes a vibrant web culture that encourages usage - seen by many as the raison d'etre of the Internet.
 Again, this contribution is unlikely to be surprising for many readers, but it does emphasize that experimentation and variety are natural to university web sites.
 
-\subsection{Webometrics Ranking of World Universities}
+\section{Webometrics Ranking of World Universities}
 This is one of the most notable implementation of webometrics. It is an undertaking by the Cybermetrics Lab (Spanish National Research Council, CSIC). It analyses and ranks over 20,000 university or academic institution websites. The rankings are published twice a year (January and July) since 2004. The rankings are based on web impact, web presence, openness and excellence.
 
 \subsubsection{Web Impact}
@@ -51,10 +51,9 @@ The global effort to set up institutional research repositories is explicitly re
 
 \subsubsection{Excellence}
 The academic papers published in high impact international journals are playing a very important role in the ranking of Universities. Using simply the total number of papers can be misleading, so we are restricting the indicator to only those excellent publications, i.e. the university scientific output being part of the 10\% most cited papers in their respective scientific fields. Although this is a measure of high quality output of research institutions, the data provider Scimago group supplied non-zero values for more than 5200 universities (period 2003-2010). In future editions it is intended to match the counting periods between Scholar and Scimago sources.
-These four indicators give an academic institution’s visibility and activity. The visibility is gotten from impact and accounts for 50\%. The activity is comprised of web presence, openness and excellence
-and accounts for 50\%. The Webometrics ranking methodology comprises of four different parameters; Visibility (50\% (link
-visibility 20\% and G-factor 30\% as of July 2011)), Size (20\%), Rich Files (15\%), and Scholar (5\%) and
-Scimago (10\%).
+
+\section{Indicators}
+These four indicators give an academic institution’s visibility and activity. The visibility is gotten from impact and accounts for 50\%. The activity is comprised of web presence, openness and excellence and accounts for 50\%. The Webometrics ranking methodology comprises of four different parameters; Visibility (50\% (link visibility 20\% and G-factor 30\% as of July 2011)), Size (20\%), Rich Files (15\%), and Scholar (5\%) and Scimago (10\%).
 \begin {review_comment}{pie chart img}{orange}
 {get better pie chart}
 \end{review_comment}
@@ -70,6 +69,19 @@ Number of pages recovered from four engines: Google, Yahoo, Live Search and Exal
 and minimum results are excluded and every institution is assigned a rank according to the combined sum.
 \subsubsection{Rich Files}
 After evaluation of their relevance to academic and publication activities and considering the volume of the different file formats, the following were selected: Adobe Acrobat (.pdf), Adobe PostScript (.ps), Microsoft Word (.doc) and Microsoft Powerpoint (.ppt). These data were extracted using Google and merging the results for each filetype after log-normalising in the same way as described before.
+\subsubsection{Data storage}
+Data collected from the websites crawled had to be stored for future analysis. Storage was possible in two ways : 
+\begin{enumerate}
+\item \itemhead{Traditional relational databases}
+They provide the most common solution for storing data. They aim to provide data integrity even though this is done while compromising performance. The web crawler collects numerous pages per second on a good network connection. Therefore, the crawler generates alot of data in a short amount of time. This would lead to the system hitting the database with inserts multiple times per unit time and the RDBMS trying to validate and ensure data integrity. This would undoubtedly develop into a bottleneck for the system in terms of scalability and speed.
+
+\item \itemhead{Flat files}
+They provide the simplest solution of the three choices. The format chosen to store the data was JSON. The data was stored as JSON lines not JSON objects. This was done to ensure the reading and writing of the files was done on a line by line basis not as one object to ensure minimal memory consumption and I/O access delays. The system at first used json files to store the data though it became evident that file location would become a thorny issue. 
+
+\item \itemhead{NoSQL databases}
+They come in different forms e.g. document-oriented databases, graph databases e.t.c. They were developed as a solution to the constrictions of traditional SQL databases'.
+
+\end{enumerate}
 \begin{review_comment}{comparisons}{red}
 {
     comparison between sql and nosql databases
