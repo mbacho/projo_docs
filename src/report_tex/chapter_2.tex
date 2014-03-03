@@ -19,7 +19,7 @@ economic activity"
 \end{list}
 The terms ‘webometrics’ and ‘cybermetrics’ are often used synonymously though webometrics is a subset of cybermetrics.
 \paragraph{}
-The main method used in webometrics is link analysis. The reason is that the links to a web site can reveal useful information about how popular it is, which pages or resources are the most popular, why it is popular and where it is popular. Whilst all this information can also be gained from web server log file analysis, the latter can normally only be conducted with permission of a site’s webmaster. In contrast, link analysis can be applied to any web site. This means that link analysis can be used to evaluate a web site by comparing it to its competitors or to similar web sites and can also be used to identify missed audiences for a site. Link analysis has been used extensively to develop algorithms like the Page Rank algorithm, which is used to rank websites in Google’s search engine.
+The main method used in webometrics is link analysis. The reason is that the links to a web site can reveal useful information about how popular it is, which pages or resources are the most popular, why it is popular and where it is popular. Whilst all this information can also be gained from web server log file analysis, the latter can normally only be conducted with permission of a site’s webmaster. In contrast, link analysis can be applied to any web site. This means that link analysis can be used to evaluate a web site by comparing it to its competitors or to similar web sites and can also be used to identify missed audiences for a site. Link analysis has been used extensively to develop algorithms like the Page Rank algorithm, which is used to rank websites in Google’s search engine. Link analysis on academic institution websites has been inspired by bibliometrics and citation analysis.
 \begin{review_comment}{More info on link analysis}{red}
 {More info on link analysis}
 \end{review_comment}
@@ -32,8 +32,7 @@ The main method used in webometrics is link analysis. The reason is that the lin
 %}
 % \end{review_comment}
 \paragraph{}
-Link analysis on academic institution websites has been inspired by bibliometrics and citation
-analysis. A lot of information is published on an academic website. Although some academic papers are published on university web servers, there is a lot of other information in university web sites that is not part of the academic publishing process and is not attempting to directly contribute to the progress of academic knowledge. This will be common knowledge to anyone that has used a university web site, but is nevertheless important. Middleton, McConnell, and Davidson (1999) have proposed, "a model for the structure and content of a university [web] site", claiming that it is in the interests of a university to provide three different types of information.
+A lot of information is published on an academic website. Although some academic papers are published on a university's web servers, there is a lot of other information in university web sites that is not part of the academic publishing process and is not attempting to directly contribute to the progress of academic knowledge. This will be common knowledge to anyone that has used a university web site, but is nevertheless important. Middleton, McConnell, and Davidson (1999) have proposed, "a model for the structure and content of a university [web] site", claiming that it is in the interests of a university to provide three different types of information.
 \begin{list}{}{}
 \item Promotional information: advertising services, assets and achievements to potential customers, collaborators and recruits (recruits being both staff and students).
 \item Value-added information: providing genuinely useful services to people, encouraging their return and enhancing the institution's reputation as an innovative information provider
@@ -76,24 +75,21 @@ then combined to generate the rank.
 Number of pages recovered from four engines: Google, Yahoo, Live Search and Exalead. For each engine, results are log-normalised to 1 for the highest value. Then for each domain, maximum
 and minimum results are excluded and every institution is assigned a rank according to the combined sum.
 \subsubsection{Rich Files}
-After evaluation of their relevance to academic and publication activities and considering the volume of the different file formats, the following were selected: Adobe Acrobat (.pdf), Adobe PostScript (.ps), Microsoft Word (.doc) and Microsoft Powerpoint (.ppt). These data were extracted using Google and merging the results for each filetype after log-normalising in the same way as described before.
-\subsubsection{Data storage}
-Data collected from the websites crawled had to be stored for future analysis. Storage was possible in two ways : 
-\begin{enumerate}
-\item \itemhead{Traditional relational databases}
-They provide the most common solution for storing data. They aim to provide data integrity even though this is done while compromising performance. The web crawler collects numerous pages per second on a good network connection. Therefore, the crawler generates alot of data in a short amount of time. This would lead to the system hitting the database with inserts multiple times per unit time and the RDBMS trying to validate and ensure data integrity. This would undoubtedly develop into a bottleneck for the system in terms of scalability and speed.
+After evaluation of their relevance to academic and publication activities and considering the volume of the different file formats, the following were selected: Adobe Acrobat (.pdf), Adobe PostScript (.ps), Microsoft Word (.doc) and Microsoft Powerpoint (.ppt). These data were extracted using Google and merging the results for each 
+filetype after log-normalising in the same way as described before.
+\subsubsection{Scholar}
+Google Scholar provides the number of papers and citations for each academic domain. These results from the Scholar database represent papers, reports and other academic items.
+In 2011, Webometrics modified their methodology to include G-factor. This is a based on the number of inbound links that a particular institution has on the websites of the Top 1000 Universities of the world.
+These four indicators give an academic institution’s visibility and activity. The visibility is gotten from
+impact and accounts for 50\%. The activity is comprised of web presence, openness and excellence
+and accounts for 50\%.
 
-\item \itemhead{Flat files}
-They provide the simplest solution of the three choices. The format chosen to store the data was JSON. The data was stored as JSON lines not JSON objects. This was done to ensure the reading and writing of the files was done on a line by line basis not as one object to ensure minimal memory consumption and I/O access delays. The system at first used json files to store the data though it became evident that file location would become a thorny issue. 
-
-\item \itemhead{NoSQL databases}
-They come in different forms e.g. document-oriented databases, graph databases e.t.c. They were developed as a solution to the constrictions of traditional SQL databases'.
-
-\end{enumerate}
-\begin{review_comment}{comparisons}{red}
-{
-    comparison between sql and nosql databases
-    reasons for using flatfiles (json)
-    comparison between document and graph databases
-}
+\begin{review_comment}{graph of kenyan university rankings}{orange}
+{get graph of previous positions}
 \end{review_comment}
+
+\begin{review_comment}{graph of world university rankings}{orange}
+{get graph of previous positions}
+\end{review_comment}
+
+

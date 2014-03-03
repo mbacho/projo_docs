@@ -18,7 +18,8 @@ clean:
 	-rm ${filename}.pdf
 	-rm ${filename}.tdo
 	-rm ${filename}.toc
-		
+
 read:
-	evince ${builddir}/${filename}.pdf
-	
+	if [ -e "${builddir}/${filename}.pdf" ]; then evince ${builddir}/${filename}.pdf; else echo "pdf not generated"; fi
+
+

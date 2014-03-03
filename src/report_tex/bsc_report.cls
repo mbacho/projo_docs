@@ -27,6 +27,7 @@
 \usepackage{multirow}
 \usepackage[colorlinks,linkcolor=black]{hyperref}
 \graphicspath{{../static/img/}}
+\usepackage{float}
 %---------------------------------------------------------------
 
 \newcommand{\submittedtext}{{A project report submitted in partial fulfillment of the BSc (Computer Science)}}
