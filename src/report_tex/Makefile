@@ -3,7 +3,7 @@ builddir=build
 
 .PHONY: pdf
 pdf:
-	mkdir ${builddir}
+	if [ ! -e "${builddir}" ]; then mkdir ${builddir}; fi
 	pdflatex --output-directory=${builddir} ${filename}.tex
 
 .PHONY: clean
@@ -18,6 +18,7 @@ clean:
 	-rm ${filename}.pdf
 	-rm ${filename}.tdo
 	-rm ${filename}.toc
+	-rm ${filename}.dvi
 
 read:
 	if [ -e "${builddir}/${filename}.pdf" ]; then evince ${builddir}/${filename}.pdf; else echo "pdf not generated"; fi

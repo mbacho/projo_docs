@@ -25,9 +25,10 @@
 \usepackage{soul}
 \usepackage[bordercolor=white,backgroundcolor=gray!30,linecolor=black,colorinlistoftodos]{todonotes}
 \usepackage{multirow}
-\usepackage[colorlinks,linkcolor=black]{hyperref}
-\graphicspath{{../static/img/}}
 \usepackage{float}
+\usepackage[colorlinks=true,linkcolor=black]{hyperref}
+\graphicspath{{../static/img/}}
+
 %---------------------------------------------------------------
 
 \newcommand{\submittedtext}{{A project report submitted in partial fulfillment of the BSc (Computer Science)}}

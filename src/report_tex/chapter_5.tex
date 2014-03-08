@@ -61,7 +61,7 @@ The web crawler was implemented in Python programming language using a framework
 To avoid collection of duplicate links, three methods were employed. First, a list of visited URLs was kept and updated as pages are visited and downloaded. Before a page is visited, it is checked against the list of visited pages. If present in the list, it the page has been visited and the duplicate is dropped. If not, the link is visited and added to the list. The second method involved generating a hash for a web page's contents and comparing it to other web page's hashes that were captured earlier. A match between the new hash the stored hashes meant another page with the same content was already crawled and the new page discarded. By weeding out duplicate pages, duplicate URLs which would have been extracted are avoided. This method made it easy and fast to compare content from different web pages without comparing content value strings. However, this method was unable to discern between pages with almost similar content e.g. pages with only one character is different. The last method was to check the freshly extracted links against a list of the stored extracted links. Any newly extracted link found in the stored extracted links was dropped.
 
 \subsubsection{Spider traps}
-\subsection{Web crawler ethics}
+\subsubsection{Web crawler ethics}
 Crawlers can be configured to target specific websites, webpages or elements in the website. They offer more credible results than search engines since:
 \begin{enumerate}
 \item a) they use the most recent website pages at the time of the crawl
@@ -100,6 +100,9 @@ They come in different forms e.g. document-oriented databases, graph databases e
 }
 \end{review_comment}
 
+\subsection{Web crawler server}
+\subsubsection{Message queues}
+A message queue was used to do computationally or time intensive tasks that should not impact the user's experience of the application.
 
 \section{Data analysis}
 Webometric formula
