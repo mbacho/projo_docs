@@ -27,6 +27,9 @@
 \usepackage{multirow}
 \usepackage{float}
 \usepackage[colorlinks=true,linkcolor=black]{hyperref}
+\usepackage{titlesec}
+\usepackage{parskip}
+\setlength{\parindent}{15pt}
 \graphicspath{{../static/img/}}
 
 %---------------------------------------------------------------
@@ -156,14 +159,14 @@
 	\definecolor{highlight}{RGB}{255,251,204} % Code highlight color
 	\lstdefinestyle{py_style} {
 		language=Python, 
-		backgroundcolor=\color{highlight},
+%		backgroundcolor=\color{highlight},
 		basicstyle=\footnotesize\ttfamily,
-		breakatwhitespace=false,
-		breaklines=true, 
-		captionpos=b, 
+		breakatwhitespace=true,
+		breaklines=true,
+		captionpos=b,
 		commentstyle=\usefont{T1}{pcr}{m}{sl}\color{comment},
-		frame=single, 
-		frameround=tttt,
+%		frame=single,
+%		frameround=tttt,
 		keywordstyle=\color{Blue}\bf,
 		numbers=none,
 		rulecolor=\color{black},
@@ -201,4 +204,6 @@
 	\textbf{#1}
 }
 
+\titlespacing*{\chapter}{0pt}{-50pt}{20pt}
+\titleformat{\chapter}[display]{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
 
