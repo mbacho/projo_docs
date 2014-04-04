@@ -29,14 +29,6 @@ The main method used in webometrics is link analysis. The reason is that the lin
 \begin{review_comment}{More info on link analysis}{red}
 {More info on link analysis}
 \end{review_comment}
-\subsubsection{PageRank}
-% \begin{review_comment}{pagerank}{orange}
-% {
-% checkout 10algorithms-08.pdf
-% Liu B (2007) Web data mining: exploring hyperlinks, contents and usage Data. Springer, Heidelberg
-% Langville AN, Meyer CD (2006) Google’s PageRank and beyond: the science of search engine rankings. Princeton University Press, Princeton
-%}
-% \end{review_comment}
 
 \noindent
 A lot of information is published on an academic website. Although some academic papers are published on a university's web servers, there is a lot of other information in university web sites that is not part of the academic publishing process and is not attempting to directly contribute to the progress of academic knowledge. This will be common knowledge to anyone that has used a university web site, but is nevertheless important. Middleton, McConnell, and Davidson (1999) have proposed, "a model for the structure and content of a university [web] site", claiming that it is in the interests of a university to provide three different types of information.
@@ -56,45 +48,72 @@ Again, this contribution is unlikely to be surprising for many readers, but it d
 \noindent
 This is one of the most notable implementation of webometrics. It is an undertaking by the Cybermetrics Lab (Spanish National Research Council, CSIC). It analyses and ranks over 20,000 university or academic institution websites. The rankings are published twice a year (January and July) since 2004. The rankings are based on web impact, web presence, openness and excellence.
 
-\subsubsection{Web Impact}
+\noindent
+\textbf{Web Impact}
+
 \noindent
 The quality of the contents is evaluated through a "virtual referendum", counting all the external inlinks that the University webdomain receives from third parties. Those links are recognizing the institutional prestige, the academic performance, the value of the information, and the usefulness of the services as introduced in the webpages according to the criteria of millions of web editors from all over the world. The link visibility data is collected from the two most important providers of this information: Majestic SEO and ahrefs . Both use their own crawlers, generating different databases that should be used jointly for filling gaps or correcting mistakes. The indicator is the product of square root of the number of backlinks and the number of domains originating those backlinks, so it is not only important the link popularity but even more the link diversity. The maximum of the normalized results is the impact indicator.
 
-\subsubsection{Web presence}
+\noindent
+\textbf{Web presence}
+
 \noindent
 The total number of webpages hosted in the main webdomain (including all the subdomains and directories) of the university as indexed by the largest commercial search engine (Google ). It counts every webpage, including all the formats recognized individually by Google, both static and dynamic pages and other rich files. It is not possible to have a strong presence without the contribution of everybody in the organization as the top contenders are already able to publish millions of webpages. Having additional domains or alternative central ones for foreign languages or marketing purposes penalizes in this indicator and it is also very confusing for external users.
 
-\subsubsection{Openness}
+\noindent
+\textbf{Openness}
+
 \noindent
 The global effort to set up institutional research repositories is explicitly recognized in this indicator that takes into account the number of rich files (pdf, doc, docx, ppt) published in dedicated websites according to the academic search engine Google Scholar. Both the total files Both the total records and those with correctly formed file names are considered (for example, the Adobe Acrobat files should end with the suffix .pdf). The objective is to consider recent publications that now are those published between 2008 and 2012 (new period).
 
-\subsubsection{Excellence}
+\noindent
+\textbf{Excellence}
+
 \noindent
 The academic papers published in high impact international journals are playing a very important role in the ranking of Universities. Using simply the total number of papers can be misleading, so we are restricting the indicator to only those excellent publications, i.e. the university scientific output being part of the 10\% most cited papers in their respective scientific fields. Although this is a measure of high quality output of research institutions, the data provider Scimago group supplied non-zero values for more than 5200 universities (period 2003-2010). In future editions it is intended to match the counting periods between Scholar and Scimago sources.
 
-\section{Indicators}
+\subsection*{Indicators}
+
 \noindent
-These four indicators give an academic institution’s visibility and activity. The visibility is gotten from impact and accounts for 50\%. The activity is comprised of web presence, openness and excellence and accounts for 50\%. The Webometrics ranking methodology comprises of four different parameters; Visibility (50\% (link visibility 20\% and G-factor 30\% as of July 2011)), Size (20\%), Rich Files (15\%), and Scholar (5\%) and Scimago (10\%).
+Indicators were developed to capture the multi-dimensional activities of universities. Each indicator measures a different aspect of the universities' activities. The first indicator proposed, Web Impact Factor (WIF), was based on link analysis that combined the number of external inlinks and the number of pages of the website. This was a 1:1 ration between visibility and size. 
+
+\noindent
+The Webometrics Ranking of World Universities extended this proposal by adding two more indicators: number of rich files and the number of publications. The number of rich files was derived from the number of rich files in the institution's domain. The number of publications was provided by Google Scholar.
+
+\noindent
+These four indicators give an academic institution's visibility and activity. The visibility is gotten from impact and accounts for 50\%. The activity is comprised of web presence, openness and excellence and accounts for 50\%. The Webometrics ranking methodology comprises of four different parameters; Visibility (50\% (link visibility 20\% and G-factor 30\% as of July 2011)), Size (20\%), Rich Files (15\%), and Scholar (5\%) and Scimago (10\%).
 \begin {review_comment}{pie chart img}{orange}
 {get better pie chart}
 \end{review_comment}
-\begin{figure}
+\begin{figure}[H]
 	\includegraphics[width=\linewidth,scale=0.5]{../static/img/analysis_model.jpg}
 	\caption{Webometrics university ranking methodology. Source :}
 \end{figure}
-\subsubsection{Visibility}
+
+\noindent
+\textbf{Visibility}
+
 \noindent
 The total number of unique external links received (inlinks) by a site can be only confidently obtained from Yahoo Search. Results are log-normalised to 1 for the highest value and
 then combined to generate the rank.
-\subsubsection{Size}
+
+\noindent
+\textbf{Size}
+
 \noindent
 Number of pages recovered from four engines: Google, Yahoo, Live Search and Exalead. For each engine, results are log-normalised to 1 for the highest value. Then for each domain, maximum
 and minimum results are excluded and every institution is assigned a rank according to the combined sum.
-\subsubsection{Rich Files}
+
+\noindent
+\textbf{Rich Files}
+
 \noindent
 After evaluation of their relevance to academic and publication activities and considering the volume of the different file formats, the following were selected: Adobe Acrobat (.pdf), Adobe PostScript (.ps), Microsoft Word (.doc) and Microsoft Powerpoint (.ppt). These data were extracted using Google and merging the results for each 
 filetype after log-normalising in the same way as described before.
-\subsubsection{Scholar}
+
+\noindent
+\textbf{Scholar}
+
 \noindent
 Google Scholar provides the number of papers and citations for each academic domain. These results from the Scholar database represent papers, reports and other academic items.
 In 2011, Webometrics modified their methodology to include G-factor. This is a based on the number of inbound links that a particular institution has on the websites of the Top 1000 Universities of the world.
@@ -111,3 +130,11 @@ and accounts for 50\%.
 \end{review_comment}
 
 
+\section{PageRank}
+% \begin{review_comment}{pagerank}{orange}
+% {
+% checkout 10algorithms-08.pdf
+% Liu B (2007) Web data mining: exploring hyperlinks, contents and usage Data. Springer, Heidelberg
+% Langville AN, Meyer CD (2006) Google’s PageRank and beyond: the science of search engine rankings. Princeton University Press, Princeton
+%}
+% \end{review_comment}
