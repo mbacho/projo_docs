@@ -31,7 +31,7 @@
 \usepackage{parskip}
 \setlength{\parindent}{15pt}
 \graphicspath{{../static/img/}}
-
+\usepackage{cite}
 %---------------------------------------------------------------
 
 \newcommand{\submittedtext}{{A project report submitted in partial fulfillment of the BSc (Computer Science)}}
@@ -183,6 +183,7 @@
 \newenvironment{references}{
     \chapter{References}
 }{\newpage}
+% \renewcommand{\refname}{}
 
 %Review comment markers
 % #1 comment heading

@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 """
 The MIT License
 
@@ -33,10 +34,12 @@ from os import (system, mkdir)
 from os.path import (join, exists, isdir)
 import sys
 from shutil import rmtree
+from sys import argv
+
 from jinja.exceptions import TemplateNotFound
 from jinja.environment import Environment
 from jinja import FileSystemLoader
-from sys import argv
+
 
 def clean_output(output_dir):
     if exists(output_dir) and isdir(output_dir):
@@ -68,7 +71,7 @@ def main(push_origin=False):
     system('cp src/index.html %s/' % html_dir)
     system('cp -R src/static %s/' % html_dir)
     if exists('src/report_tex/report.pdf'):
-        system('cp src/report_tex/report.pdf %s/static/'%html_dir)
+        system('cp src/report_tex/report.pdf %s/static/' % html_dir)
     else:
         print 'report.pdf not found'
     if push_origin:
@@ -76,5 +79,5 @@ def main(push_origin=False):
 
 
 if __name__ == '__main__':
-    main(len(argv)==2)
+    main(len(argv) == 2)
 

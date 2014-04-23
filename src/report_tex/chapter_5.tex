@@ -57,9 +57,9 @@ Web pages themselves are a challenge to parse easily. This is mainly due to them
 \noindent
 Traversing a website tree might bring up challenges. For example, if a page has a link referring to itself, the crawler might end up going into an infinite loop if it follows such a link. Also, links to the root node (start page) in the child nodes might also mean the crawler will traverse the website infinitely. A good example of this is navigation bars. They may contain the current page’s URL and the home page’s URL. One page could have multiple inlinks which would mean the crawler will visit a page more than one which is inefficient and resource consuming. Therefore such links should be filtered out. In some websites, different pages could have similar content. The crawler needs to filter this out also. Web pages A and B could be considered to be similar if:
 \begin{enumerate}
-\item a) They both have the same URL
-\item b) They both have the same content
-\item c) They both have almost similar content
+\item They both have the same URL
+\item They both have the same content
+\item They both have almost similar content
 \end{enumerate}
 
 \noindent
@@ -77,13 +77,17 @@ The web crawler was implemented in Python programming language using a framework
 To avoid collection of duplicate links, three methods were employed. First, a list of visited URLs was kept and updated as pages are visited and downloaded. Before a page is visited, it is checked against the list of visited pages. If present in the list, it the page has been visited and the duplicate is dropped. If not, the link is visited and added to the list. The second method involved generating a hash for a web page's contents and comparing it to other web page's hashes that were captured earlier. A match between the new hash the stored hashes meant another page with the same content was already crawled and the new page discarded. By weeding out duplicate pages, duplicate URLs which would have been extracted are avoided. This method made it easy and fast to compare content from different web pages without comparing content value strings. However, this method was unable to discern between pages with almost similar content e.g. pages with only one character is different. The last method was to check the freshly extracted links against a list of the stored extracted links. Any newly extracted link found in the stored extracted links was dropped.
 
 \subsubsection{Spider traps}
+\noindent
+Spider traps are situations in which web crawlers get caught in a never ending crawl paths. The trap creates an infinite number of URLs for the crawler to find. Spider traps are laid out intentionally, e.g. to isolate bots or unintentionally e.g. calendar entries. 
+
 \subsubsection{Web crawler ethics}
+
 \noindent
 Crawlers can be configured to target specific websites, webpages or elements in the website. They offer more credible results than search engines since:
 \begin{enumerate}
-\item a) they use the most recent website pages at the time of the crawl
-\item b) there is a high probability that they will cover the whole domain [[ please confirm this theory ]]
-\item c) they can be tailored to look for specific information in websites.
+\item they use the most recent website pages at the time of the crawl
+\item there is a high probability that they will cover the whole domain [[ please confirm this theory ]]
+\item they can be tailored to look for specific information in websites.
 \end{enumerate}
 \noindent
 They give the users more freedom and control over what information they want to extract from
@@ -123,15 +127,19 @@ A web crawler server was used to manage web crawlers. It scheduled, paused, resu
 The initial implementation of this was a generic server bundled with the web crawler framework. This implementation allowed crawls to be started, paused, resumed and stopped but could not schedule crawls. The implementation was also unable to cater for more than one crawl at a time. Each web crawling instance had its own server, thus it proved difficult to co-ordinate.
 
 \noindent
-The second attempt at the server was in form of a dedicated web crawler server called scrapyd. It is basically a scheduler to run web crawlers for one time jobs. It provided very useful functionalities e.g. viewing logs, managing running crawls and others. One major improvement over the first attempt was the fact that scrapyd could run multiple crawls simultaneously. However, control over the running of the web crawls proved to be too cumbersome. Pausing and resuming web crawls was not handled by the server while scheduling of the spiders for repeated runs was not efficient.
+The second attempt at the server was in form of a dedicated web crawler server called scrapyd. It is basically a scheduler to run web crawlers for one time jobs. It provided very useful functionality e.g. viewing logs, managing running crawls and others. One major improvement over the first attempt was the fact that scrapyd could run multiple crawls simultaneously. However, control over the running of the web crawls proved to be too cumbersome. Pausing and resuming web crawls was not handled by the server while scheduling of the spiders for repeated runs was not efficient.
 
 \noindent
-The third attempt at the server was -----
+The third attempt at the server was in form of a task manager. The task manager ran scheduled web crawls 
+
 \subsubsection{Message queues}
 \noindent
 A message queue was used to do computationally or time intensive tasks that should not impact the user's experience of the application.
 
 \section{Data analysis}
+Two main algorithms were used in data analysis : the webometrics formula and pagerank.
+Data collected from the website crawls was analysed in three stages. The first stage involved getting the preliminary statistics of the crawl. The preliminary statistics contained the number of outlinks, the number of richfiles, the number of pages not found, the number of unique pages crawled and the domain's computed score.
+The second stage of analysis was computing the pagerank of the domain crawled. This was a computing intensive task since most of the crawls of domains resulted in page collections over 1,000 pages
 Webometric formula
 Visibility + Size + Rich files + Papers
 50\% + 25\% + 12.5\% + 12.5\% = 100\%

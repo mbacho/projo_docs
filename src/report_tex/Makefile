@@ -5,6 +5,8 @@ builddir=build
 pdf:
 	if [ ! -e "${builddir}" ]; then mkdir ${builddir}; fi
 	pdflatex --output-directory=${builddir} ${filename}.tex
+	bibtex ${builddir}/${filename}.aux
+	pdflatex --output-directory=${builddir} ${filename}.tex
 
 .PHONY: clean
 clean:
