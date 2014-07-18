@@ -1,30 +1,54 @@
 {% extends 'base.html' %}
 {% block title %}{% endblock %}
 {% block slides %}
-
     {% include '_title_page.html' %}
     <section id="overview">
         <section><h2>Overview</h2></section>
         <section>
-            <h2>Introduction</h2>
-            <ul>
-                <li>Use of websites</li>
-                <li>Target audience</li>
-                <li>Focus on UoN</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Problem Statement</h2>
+            <h2>Problem statement</h2>
+            There is no effective method to analyze and determine the effectiveness and impact academic website's system
+            of websites
 
-            <p>There is no effective method to analyze and determine the effectiveness and impact UoN's system of
-                websites.</p>
-            <br/>
             <h2>Justification</h2>
+
             <p>Provision of information about the effectiveness and impact of websites will enable website
                 administrators to make more informed decisions. For example, they would know when to improve on their
                 website or policies governing the same.</p>
         </section>
     </section>
+    </section>
+    <section>
+        <section><h2>Literature review</h2></section>
+        <section>
+            <h2>Website analysis methods</h2>
+            <ul>
+                <li style="margin-bottom: 10px;">
+                    <strong>Qualitative methods</strong><br/>
+                    Content analysis, focus groups, interviews, referrer analysis, user feedback and audience analysis
+                <li>
+                    <strong>Quantitative methods</strong><br/>
+                    Website log analysis, bibliometrics, scientometrics and webometrics
+                </li>
+            </ul>
+
+        </section>
+
+        <section>
+            <h2>Webometric Ranking of Universities</h2>
+            <ul>
+                <li>Done biannually (Jan, July) by CSIC</li>
+                <li>Ranks over 20,000 universities</li>
+                <li>Metrics shown : web presence, web impact, openness and excellence</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Ranking analytics analytics used</h2>
+            <img src="static/img/analysis_model.jpg" style="zoom: 1.5"/><br/>
+            Visibility 50% (link visibility 20% and G-factor 30%), Size (20%)
+            Rich Files (15%), and Scholar (5%) and Scimago (10%)
+        </section>
+    </section>
+
     <section>
         <section><h2>Objectives</h2></section>
         <section>
@@ -45,55 +69,170 @@
         </section>
     </section>
     <section>
-        <h2>Literature review</h2>
-        Website analysis methods
-        Qualitative methods
-        Content analysis, focus groups, interviews, referrer analysis, user feedback, audience analysis
-        Quantitative methods
-        Website log analysis, bibliometrics, scientometrics, webometrics
-        .........
-    </section>
-    <section>
-        <section><h2>System development methodology</h2></section>
         <section>
-            <h2>Evolutionary prototype</h2>
-            <img src="static/img/evolutionary_prototype.jpg" alt="evolutionary prototype"
-                 title="evolutionary prototype"/>
+            <h2>System development</h2>
+            <h4>Iterative Development</h4>
+        </section>
+        <section>
+            <h2>High level design</h2>
+        </section>
+        <section>
+            <h2>Architectural overview</h2>
+            <img src="/static/img/architecture.png" alt="architectural overview"/>
+        </section>
+        <section>
+            <h2>Level 1 DFD</h2>
+            <img src="static/img/level_1_dfd.png" alt="level 1 DFD" title="level 1 DFD"/>
         </section>
         <section>
             <h2>Iterations</h2>
-            <img src="static/img/iterations.png" alt="iterations" title="iterations"/>
+            <ol>
+                <li>Data collection</li>
+                <li>Data analysis</li>
+                <li>Data presentation</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Iteration 1</h2>
+            <h4>Data collection</h4>
+        </section>
+
+        <section>
+            <h2>Data collection techniques</h2>
+
+            <h3>1. Seach engines</h3>
+
+            <h3>2. Web crawlers</h3>
+        </section>
+        <section>
+            <h2>Search engines</h2>
+            <ul>
+                <li><strong>The good</strong><br/>
+                    Free (cheap), coverage (shallow web)
+                </li>
+                <li><strong>The bad</strong><br/>
+                    Inconsistent data, different algorithms
+                </li>
+                <li><strong>The ugly</strong><br/>
+                    Minimal coverage (deep web)
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h2>Web crawler</h2>
+            <img src="static/img/webtree.png"/>
+        </section>
+
+        <section>
+            <ul>Why use crawlers?</ul>
+            <ol>
+                <li>Control</li>
+                <li>Content vs URL crawlers</li>
+                <li>Scalability and flexibility</li>
+            </ol>
+        </section>
+        <section>
+            <h2>Crawler design</h2>
+        </section>
+        <section>
+            <h2>Crawler DFD</h2>
+            <img src="static/img/crawler_level1_dfd.png" style="zoom: 1.5" alt="crawler architecture"
+                 title="crawler architecture"/>
+        </section>
+
+        <section>
+            <h2>Crawler Datastore</h2>
+            <img src="static/img/crawler_datastore.png" alt="crawler datastore" title="crawler datastore"/>
+        </section>
+        <section>
+            <h2>Crawler architecture</h2>
+            <img src="static/img/scrapy.png" alt="crawler architecture" title="crawler architecture"/>
+            <br/>Crawl server
+        </section>
+
+        <section>
+            <h2>Data analyzer architecture</h2>
+            <img src="../static/img/analyser_level1_dfd.png" alt="crawler architecture" title="crawler architecture"/>
+            <br/>Crawl server
+        </section>
+
+        <section>
+            <h2>Data analyzer datastore</h2>
+            <img src="static/img/analyser_erd.png" alt="analyzer datastore" title="analyzer datastore"/>
+        </section>
+
+        <section>
+            <h2>Data presenter architecture</h2>
+            <img src="static/img/presenter_dfd.png" alt="crawler architecture" title="crawler architecture"/>
+            <br/>Crawl server
+        </section>
+        <section>
+            <h2>Data presenter</h2>
+            <img src="static/img/presenter_erd.png" alt="analyzer datastore" title="analyzer datastore"/>
         </section>
     </section>
     <section>
-        <h2>Resources</h2>
-        <ul>
-            <li><p>Advice will be provided by the UoN website administrator(s) on the requirements of the proposed
-                system</p></li>
-            <li><p>A capable computer will be used to develop the system and write documentation.</p></li>
-            <li><p>A reliable internet connection will be required to access websites for analysis</p></li>
-            <li><p>A production server to host the final system</p></li>
-        </ul>
+        <section><h2>Resources used</h2>
+            <li><b>Linux operating system</b></br>
+                This is the operating system of choice for the developer.
+            </li>
+
+            <li><b>Python programming language</b></br>
+                The system was written using Django web application framework which used python programming language.
+            </li>
+
+            <li><b>Postgresql DBMS</b></br>
+                The database was used as the application data store. It stored all the data in the system except the
+                crawl
+                data.
+            </li>
+        </section>
+        <section>
+            <h2>Resources cont...</h2>
+            <li><b>Mongo DB</b></br>
+                The database was used to store all the crawl data generated by the system. This database was preferred
+                since
+                it had the ability to handle millions of records easily and thus able to scale. It also was able to work
+                with missing data.
+            </li>
+
+            <li><b>Git</b></br>
+                It was used to version the system's source code and documentation.
+            </li>
+
+            <li><b>Chromium and Firefox Web browser</b></br>
+                The two web browsers were used to test and use the system's web interface.
+            </li>
+        </section>
+        <section><h2>Resources cont....</h2>
+            <li><b>Rabbit MQ</b></br>
+                It was used as a message broker between the crawler server and the rest of the application. It mediated
+                communication between the two thus decoupling them.
+            </li>
+
+            <li><b>Hardware resources</b><br/>
+                Laptop PC (Intel core i5 processor, over 4gb ram and over 2 gb free harddisk space)</br>
+                Internet connection
+            </li>
+        </section>
     </section>
     <section>
-        <h2>Schedule</h2>
-        <img src="static/img/gantt.png" alt="project gantt chart" title="project gantt chart"/>
-    </section>
-    <section>
-        <h2>References</h2>
+        <h2>Challenges</h2>
         <ul>
-            <li><p>Oxford Internet Institute, n.d. Analytics. [Online] Available at:
-                http://microsites.oii.ox.ac.uk/tidsr/kb/kb/analytics [Accessed 23 October 2013].</p></li>
-            <li><p>Thelwall, M., 2009. Introduction to Webometrics: Quantitative Web Research for the Social Sciences.
-                Morgan & Claypool.</p></li>
-            <li><p>Thelwall, M., 2013. Webometrics and Social Web Research Methods.</p></li>
-            <li><p>Thelwall, M., Vaughan, L. & Bjorneborn, L., n.d. Webometrics. In Annual Review of Information Science
-                and Technology.</p></li>
+            <li>
+                <strong>Authorization</strong><br/>
+                University denied permission to have a  formal interview with ICT staff
+            </li>
+            <li>
+                <strong>Crawler pitfals</strong><br/>
+                Poor coding of websites, Spider traps
+            </li>
         </ul>
     </section>
     <section>
         <h2>Thank you</h2>
 
-        <h3>Q & A</h3>
+        <h3>Prototype demo</h3>
     </section>
 {% endblock %}
